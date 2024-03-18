@@ -15,6 +15,8 @@ namespace nikitov
 
     void push(const T& value);
     T& drop();
+    size_t size() const;
+    bool empty() const;
 
   private:
     void move();
@@ -42,6 +44,18 @@ namespace nikitov
       move();
     }
     return data2_.drop();
+  }
+
+  template< class T >
+  size_t Queue< T >::size() const
+  {
+    return data1_.size() += data2_.size();
+  }
+
+  template< class T >
+  bool Queue< T >::empty() const
+  {
+    return !size();
   }
 
   template< class T >
