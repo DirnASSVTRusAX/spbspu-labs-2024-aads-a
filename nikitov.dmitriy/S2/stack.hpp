@@ -14,9 +14,9 @@ namespace nikitov
 
     void push(const T& value);
     T& drop();
+
   private:
     void resize();
-
     T* data_;
     size_t size_;
     size_t capacity_;
@@ -44,6 +44,13 @@ namespace nikitov
     }
     data_[size_] = value;
     ++size_;
+  }
+
+  template< class T >
+  T& Stack< T >::drop()
+  {
+    --size_;
+    return data_[size_];
   }
 
   template< class T >
