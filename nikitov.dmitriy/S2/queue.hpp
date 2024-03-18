@@ -30,5 +30,11 @@ namespace nikitov
     size_(data1_.size_),
     capacity_(data1_.capacity_)
   {}
+
+  template< class T >
+  void Queue< T >::push(const T& value)
+  {
+    data1_.push(value);
+  }
 }
 #endif
