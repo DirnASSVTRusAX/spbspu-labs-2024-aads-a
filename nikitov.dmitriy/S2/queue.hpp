@@ -17,24 +17,40 @@ namespace nikitov
     T& drop();
 
   private:
+    void move();
     Stack< T > data1_;
     Stack< T > data2_;
-    size_t& size_;
-    size_t& capacity_;
   };
 
   template< class T >
   Queue< T >::Queue():
     data1_(),
-    data2_(),
-    size_(data1_.size_),
-    capacity_(data1_.capacity_)
+    data2_()
   {}
 
   template< class T >
   void Queue< T >::push(const T& value)
   {
     data1_.push(value);
+  }
+
+  template< class T >
+  T& Queue< T >::drop()
+  {
+    if (data2_.empty())
+    {
+      move();
+    }
+    return data2_.drop();
+  }
+
+  template< class T >
+  void Queue< T >::move()
+  {
+    while (!data1_.empty())
+    {
+      data2_.push(data1_.drop());
+    }
   }
 }
 #endif
