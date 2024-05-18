@@ -11,7 +11,38 @@ int main(int argc, char* argv[])
     std::cerr << "Error: Wrong input parameters" << '\n';
     return 1;
   }
-  std::forward_list< float > list;
-  List< float > biList;
-  std::deque< float > deque;
+
+  size_t size = {};
+  try
+  {
+    size = std::stoull(argv[3]);
+  }
+  catch (const std::exception&)
+  {
+    std::cerr << "Error: Wrong size" << '\n';
+    return 1;
+  }
+
+  std::forward_list< float > firstList;
+  std::forward_list< float > secondList;
+  List< float > firstBiList;
+  List< float > secondBiList;
+  std::deque< float > firstDeque;
+  std::deque< float > secondDeque;
+
+  if (argv[2] == "ints")
+  {
+
+  }
+  else if (argv[2] == "floats")
+  {
+
+  }
+  else
+  {
+    std::cerr << "Error: Wrong type parameter" << '\n';
+    return 1;
+  }
+
+  return 0;
 }
