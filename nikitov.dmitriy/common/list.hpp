@@ -374,22 +374,22 @@ namespace nikitov
   template< class T >
   void List< T >::assign(constIterator first, constIterator second)
   {
-   List< T > newList(first, second);
-   swap(newList);
+    List< T > newList(first, second);
+    swap(newList);
   }
 
   template< class T >
   void List< T >::assign(size_t n, const T& value)
   {
-   List< T > newList(n, value);
-   swap(newList);
+    List< T > newList(n, value);
+    swap(newList);
   }
 
   template< class T >
   void List< T >::assign(std::initializer_list< T > initList)
   {
-   List< T > newList(initList);
-   swap(newList);
+    List< T > newList(initList);
+    swap(newList);
   }
 
   template< class T >
@@ -621,7 +621,7 @@ namespace nikitov
       detail::Node< T >* node = head_;
       while (node != tail_)
       {
-        if (cmp(node->value_, node->next_->value_))
+        if (!cmp(node->value_, node->next_->value_))
         {
           isSorted = false;
           if (node->next_ == tail_)
