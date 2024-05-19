@@ -294,14 +294,7 @@ namespace nikitov
     }
     if (iterator.node_->size_ == 2)
     {
-      if (iterator.isFirst_)
-      {
-        iterator.node_->freeFirst();
-      }
-      else
-      {
-        iterator.node_->freeSecond();
-      }
+      iterator.node_->free(iterator.isFirst_);
     }
     else
     {

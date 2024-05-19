@@ -10,9 +10,10 @@ namespace nikitov
   {
     while (begin != end)
     {
-      output << *begin;
+      output << *begin << ' ';
       ++begin;
     }
+    output << '\n';
   }
 }
 #endif

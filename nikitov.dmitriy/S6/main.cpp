@@ -44,27 +44,33 @@ int main(int argc, char* argv[])
 
     if (sorting == "ascending")
     {
-      std::sort(fList.begin(), fList.end(), std::less< int >());
+      fList.sort(std::less< int >());
       oddEvenSort(firstBiList.begin(), firstBiList.end(), std::less< int >());
       secondBiList.sort(std::less< int >());
       oddEvenSort(firstDeque.begin(), firstDeque.end(), std::less< int >());
-      QSort(firstDeque.begin(), firstDeque.end(), std::less< int >());
-      std::sort(firstDeque.begin(), firstDeque.end(), std::less< int >());
+      QSort(secondDeque.begin(), secondDeque.end(), std::less< int >());
+      std::sort(thirdDeque.begin(), thirdDeque.end(), std::less< int >());
     }
     else if (sorting == "descending")
     {
-      std::sort(fList.begin(), fList.end(), std::greater< int >());
+      fList.sort(std::greater< int >());
       oddEvenSort(firstBiList.begin(), firstBiList.end(), std::greater< int >());
       secondBiList.sort(std::greater< int >());
       oddEvenSort(firstDeque.begin(), firstDeque.end(), std::greater< int >());
-      QSort(firstDeque.begin(), firstDeque.end(), std::greater< int >());
-      std::sort(firstDeque.begin(), firstDeque.end(), std::greater< int >());
+      QSort(secondDeque.begin(), secondDeque.end(), std::greater< int >());
+      std::sort(thirdDeque.begin(), thirdDeque.end(), std::greater< int >());
     }
     else
     {
       std::cerr << "Error: Wrong sorting parameter" << '\n';
       return 1;
     }
+    printRange(fList.cbegin(), fList.cend(), std::cout);
+    printRange(firstBiList.cbegin(), firstBiList.cend(), std::cout);
+    printRange(secondBiList.cbegin(), secondBiList.cend(), std::cout);
+    printRange(firstDeque.cbegin(), firstDeque.cend(), std::cout);
+    printRange(secondDeque.cbegin(), secondDeque.cend(), std::cout);
+    printRange(thirdDeque.cbegin(), thirdDeque.cend(), std::cout);
   }
   else if (type == "floats")
   {
@@ -86,27 +92,33 @@ int main(int argc, char* argv[])
 
     if (sorting == "ascending")
     {
-      std::sort(fList.begin(), fList.end(), std::less< float >());
+      fList.sort(std::less< float >());
       oddEvenSort(firstBiList.begin(), firstBiList.end(), std::less< float >());
       secondBiList.sort(std::less< float >());
       oddEvenSort(firstDeque.begin(), firstDeque.end(), std::less< float >());
-      QSort(firstDeque.begin(), firstDeque.end(), std::less< float >());
-      std::sort(firstDeque.begin(), firstDeque.end(), std::less< float >());
+      QSort(secondDeque.begin(), secondDeque.end(), std::less< float >());
+      std::sort(thirdDeque.begin(), thirdDeque.end(), std::less< float >());
     }
     else if (sorting == "descending")
     {
-      std::sort(fList.begin(), fList.end(), std::greater< float >());
+      fList.sort(std::greater< float >());
       oddEvenSort(firstBiList.begin(), firstBiList.end(), std::greater< float >());
       secondBiList.sort(std::greater< float >());
       oddEvenSort(firstDeque.begin(), firstDeque.end(), std::greater< float >());
-      QSort(firstDeque.begin(), firstDeque.end(), std::greater< float >());
-      std::sort(firstDeque.begin(), firstDeque.end(), std::greater< float >());
+      QSort(secondDeque.begin(), secondDeque.end(), std::greater< float >());
+      std::sort(thirdDeque.begin(), thirdDeque.end(), std::greater< float >());
     }
     else
     {
       std::cerr << "Error: Wrong sorting parameter" << '\n';
       return 1;
     }
+    printRange(fList.cbegin(), fList.cend(), std::cout);
+    printRange(firstBiList.cbegin(), firstBiList.cend(), std::cout);
+    printRange(secondBiList.cbegin(), secondBiList.cend(), std::cout);
+    printRange(firstDeque.cbegin(), firstDeque.cend(), std::cout);
+    printRange(secondDeque.cbegin(), secondDeque.cend(), std::cout);
+    printRange(thirdDeque.cbegin(), thirdDeque.cend(), std::cout);
   }
   else
   {
