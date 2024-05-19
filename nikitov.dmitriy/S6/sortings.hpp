@@ -57,6 +57,7 @@ namespace nikitov
     RandIterator pivot = end;
     --pivot;
     std::swap(*toSwap, *pivot);
+
     RandIterator first = begin;
     RandIterator second = begin;
     bool isFirst = true;
@@ -76,6 +77,7 @@ namespace nikitov
       }
       ++second;
     }
+
     if (!isFirst)
     {
       ++first;
@@ -85,7 +87,7 @@ namespace nikitov
     {
       QSort(begin, first, cmp);
     }
-    if (pivot != first)
+    if (first != pivot)
     {
       QSort(++first, end, cmp);
     }
